@@ -10,12 +10,12 @@ DATABASE_PATH = os.path.join(PROJECT_PATH, 'app.db')
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
-SESSION_EXPIRE_AT_BROWSER_CLOSE=True
+#SESSION_COOKIE_SECURE = True
+#CSRF_COOKIE_SECURE = True
+#SESSION_EXPIRE_AT_BROWSER_CLOSE=True
 
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+     ('Luis Escamilla', 'cerelac_rox@hotmail.com'),
 )
 
 MANAGERS = ADMINS
