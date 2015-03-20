@@ -1,0 +1,32 @@
+{% extends 'app/base.html' %}
+
+{% block title %}Abrir Puerta{% endblock %}
+
+{% block body_block %}
+    <h1>Abrir Puerta</h1>
+
+    {% if match %}
+    <strong>Abriendo...</strong>
+    <div id="mtvPlayer"> 
+        <object data=http://10.42.0.32 width="800" height="600"> <embed src=http://10.42.0.32 width="800" height="600"> </embed> Error: Embedded data could not be displayed. </object>
+    </div> 
+    
+    <a href="/app/">Volver al inicio.</a><br />
+    {% else %}
+
+    <form id="form" method="post" action="/app/open/"
+            enctype="multipart/form-data">
+
+        {% csrf_token %}
+
+        <!-- Display each form. The as_p method wraps each element in a paragraph
+             (<p>) element. This ensures each element appears on a new line,
+             making everything look neater. -->
+        <p>Introduzca el código enviado a {{ numc }}</p>
+        {{ form.as_p }}
+
+        <!-- Provide a button to click to submit the form. -->
+        <input type="submit" name="submit" value="Abrir" />
+    </form>
+    {% endif %}
+{% endblock %}

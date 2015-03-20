@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="{% static 'css/bootstrap-fluid-adj.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" media="screen">
+    <link href="{% static 'css/bootstrap-responsive.css' %}" rel="stylesheet">
+
+    <title>Sistema Domotico para la Operacion Remota de los Accesos a Viviendas - {% block title %}Inicio{% endblock %}</title>
+</head>
+
+<body>
+	<div class="navbar navbar-inverse navbar-fixed-top">
+	   <div class="navbar-inner">
+	       <div class="container">
+	           <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+	               <span class="icon-bar"></span>
+	               <span class="icon-bar"></span>
+	               <span class="icon-bar"></span>
+	           </button>
+	           <a class="brand" href="/app/">Inicio</a>
+
+	           <div class="nav-collapse collapse">
+	               <ul class="nav pull-right">
+	                   {% if user.is_authenticated %}
+	                    <li class="navbar-text">Bienvenido, {{ user.username }}!</li>
+	                    <li><a href="/app/logout/">Logout</a></li>
+	                   {% else %}
+	                    <li><a href="/app/login/">Login</a></li>
+	                   {% endif %}
+	               </ul>
+	               <ul class="nav">
+	                   {% if user.is_authenticated %}
+	                    <li><a href="/app/profile/">Editar Perfil</a></li>
+	                    <li><a href="/app/open/">Abrir Puerta</a></li>
+	                    <li><a href="/app/config/">Configurar Sistema</a></li>
+	                   {% endif %}
+	                   <li><a href="/app/about/">About</a></li>
+	               </ul>
+	           </div>
+	           <!--/.nav-collapse -->
+	       </div>
+	   </div>
+	</div>
+
+	<div>
+	<center>
+		{% block body_block %}{% endblock %}
+	</div>
+	</center>
+	<hr />
+	
+    <script src="{% static 'js/jquery-2.1.3.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</body>
+</html>
