@@ -182,7 +182,7 @@ def config(request):
             cur_config = Config.objects.get(pk=1)
             if request.method == 'POST': # If the form has been submitted...
                 config_form = ConfigForm(data=request.POST, instance=cur_config)
-                #usrs_form = EditUsersForm(data=request.POST)
+                usrs_form = EditUsersForm(data=request.POST)
                 if config_form.is_valid(): #and usrs_form.is_valid():
                     configuration = config_form.save(commit=True)
                     configuration.save()
@@ -190,10 +190,10 @@ def config(request):
                     ##
             else:
                 config_form = ConfigForm(instance=cur_config)
-                #usrs_form = EditUsersForm()
+                usrs_form = EditUsersForm()
 
     return render_to_response('app/config.html', {
-        'config_form': config_form#, 'usrs_form': usrs_form
+        'config_form': config_form, 'usrs_form': usrs_form
     }, context)
 #----------------------------------------------------------------
 def user_login(request):
