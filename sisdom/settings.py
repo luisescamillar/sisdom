@@ -89,7 +89,7 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = 'f8qw*e84^5mu$spj7c^wsp&mwd#xuw^y9g6-%=nt8inxqjjet%'
+SECRET_KEY = 'f8qw*e84^5mu$spj7c^wsp&mwdxuw^y9g6-%=nt8inxqjjet%'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -132,6 +132,7 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'app',
+    'gunicorn'
 )
 
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
