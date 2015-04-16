@@ -13,8 +13,8 @@
       div.index {
         margin-left: auto;
         margin-right: auto;
-        margin-top: 60px
-        width: 600px
+        margin-top: 60px;
+        width: 600px;
       }
 
       @media (max-width: 980px) {
