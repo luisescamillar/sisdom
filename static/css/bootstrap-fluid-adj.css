@@ -1,7 +1,6 @@
       body {
         padding-top: 60px;
         padding-bottom: 40px;
-        margin: 30px;
       }
       .sidebar-nav {
         padding: 9px 0;
@@ -9,6 +8,12 @@
 
       div.body {
         margin-left: 25%
+      }
+
+      div.index {
+        margin-left: auto;
+        margin-right: auto;
+        width: 600px
       }
 
       @media (max-width: 980px) {
