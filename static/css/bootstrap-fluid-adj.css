@@ -7,7 +7,8 @@
       }
 
       div.body {
-        /*margin-left: 25%*/
+        margin-left: auto;
+        margin-right: auto;
       }
 
       div.index {
