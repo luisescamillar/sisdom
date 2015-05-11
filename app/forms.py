@@ -1,6 +1,6 @@
 from app.models import UserProfile, Config
 from django.contrib.auth.models import User
-from django import forms
+import floppyforms as forms
 
 class UserForm(forms.ModelForm):
     password = forms.CharField(widget=forms.PasswordInput())
