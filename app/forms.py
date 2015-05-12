@@ -31,4 +31,4 @@ class EditUsersForm(forms.Form):
 		return OPTIONS
 	def __init__(self, *args, **kwargs):
 	        super(EditUsersForm, self).__init__(*args, **kwargs)
-	        self.fields['choice_field'] = forms.MultipleChoiceField(widget=forms.CheckboxSelectMultiple, choices=self.get_users())
+	        self.fields['choice_field'] = forms.ModelChoiceField(widget=forms.CheckboxSelectMultiple, choices=self.get_users())
